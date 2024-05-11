@@ -1,0 +1,7 @@
+{
+  "name": "ColeApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
