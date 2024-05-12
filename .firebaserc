@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-57339": {
+      "hosting": {
+        "app": [
+          "crud-57339"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-57339"
+  }
+}

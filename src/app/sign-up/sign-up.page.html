@@ -1,0 +1,54 @@
+<ion-content>
+  <div class="header">
+    <ion-title class="title">Welcome</ion-title>
+    <p class="subTitle">Sign up to create your account</p>
+  </div>
+  <form (ngSubmit)="signUp()" #signupForm="ngForm">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          placeholder="username"
+          class="input"
+          name="username"
+          [(ngModel)]="username"
+          required
+        ></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          placeholder="password"
+          class="input"
+          name="password"
+          type="password"
+          [(ngModel)]="password"
+          required
+        ></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          class="input"
+          placeholder="4 digit password"
+          name="fourDigitPassword"
+          type="text"
+          [(ngModel)]="fourDigitPassword"
+          pattern="[0-9]{4}"
+          maxlength="4"
+          required
+        ></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div class="signinLink">
+        <p>
+          Have an account?<a style="color: #ffc33f" [routerLink]="['/']"
+            >Sign in now</a
+          >
+        </p>
+      </div>
+    </div>
+    <ion-button type="submit" expand="block" [disabled]="!signupForm.valid"
+      >Sign Up</ion-button
+    >
+  </form>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="header">
+    <ion-title class="title">Welcome</ion-title>
+    <p class="subTitle">Enter your 4 digit code</p>
+  </div>
+  <form (ngSubmit)="submitCode()" #codeForm="ngForm">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          class="input"
+          placeholder="4 digit password"
+          name="fourDigitPassword"
+          type="text"
+          [(ngModel)]="fourDigitCode"
+          pattern="[0-9]{4}"
+          maxlength="4"
+          required
+        ></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <!-- Display error message -->
+      <ion-text color="danger" *ngIf="errorMessage" class="error"
+        >{{ errorMessage }}</ion-text
+      >
+    </div>
+    <ion-button type="submit" expand="block" [disabled]="!codeForm.valid">
+      Enter
+    </ion-button>
+  </form>
+</ion-content>

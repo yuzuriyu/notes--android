@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="header">
+    <ion-title class="title">Welcome Back</ion-title>
+    <p class="subTitle">Sign in to access your account</p>
+  </div>
+  <form (ngSubmit)="signIn()">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          placeholder="username"
+          class="input"
+          name="username"
+          [(ngModel)]="username"
+        ></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          placeholder="password"
+          class="input"
+          name="password"
+          type="password"
+          [(ngModel)]="password"
+        ></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+
+      <!-- Display error message if exists -->
+      <ion-text color="danger" *ngIf="errorMessage" class="error"
+        >{{ errorMessage }}</ion-text
+      >
+
+      <div class="signinLink">
+        <p>
+          New here?<a style="color: #ffc33f" [routerLink]="['/sign-up']"
+            >Sign up now</a
+          >
+        </p>
+      </div>
+    </div>
+    <ion-button type="submit" expand="block">Sign In</ion-button>
+  </form>
+</ion-content>
